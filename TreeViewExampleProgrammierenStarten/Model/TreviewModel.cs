@@ -12,5 +12,6 @@ namespace TreeViewExampleProgrammierenStarten.Model
         public string Name { get; set; }
         public string Parent{ get; set; }
         public string ImagePath { get; set; }
+        public string Path { get; set; }
     }
 }

@@ -59,7 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ListViewModel.cs" />
     <Compile Include="Model\TreviewModel.cs" />
+    <Compile Include="Service\ListViewService.cs" />
     <Compile Include="Service\TreviewnodesService.cs" />
     <Compile Include="ViewModel\TreenodeViewModel.cs" />
     <Compile Include="ViewModel\TreeviewExampleViewModel.cs" />

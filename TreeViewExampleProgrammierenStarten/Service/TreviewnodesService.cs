@@ -28,35 +28,30 @@ namespace TreeViewExampleProgrammierenStarten.Service
         {
             DirectoryInfo strings = new DirectoryInfo(path);
             var directories = strings.GetDirectories();
-           for (int i = 0; i < directories.Count(); i++)
+            for (int i = 0; i < directories.Count(); i++)
             {
                 foreach (var model in directories)
                 {
-                    
+
                     models.Add(new TreviewModel()
                     {
                         Name = model.Name,
                         Parent = model.Parent.Name,
+                        Path = model.FullName,
                         ImagePath = @"\Image\folder_kl.png"
                     });
-                    foreach (var files in model.EnumerateFiles())
-                    {
-                        models.Add(new TreviewModel()
-                        {
-                            Name = files.Name,
-                            Parent = model.Name,
-                            ImagePath = @"\Image\diskette.png"
-                        });
-                    }
+
                 }
 
                 loadfolder(directories[i].FullName, models);
+               
+
 
             }
-            
-          
-            
-            
+
+
+
+
 
         }
 

@@ -27,7 +27,14 @@ namespace TreeViewExampleProgrammierenStarten.View
 
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
-            TreviewnodesService treviewnodesService = new TreviewnodesService();
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
             
            
         }
@@ -39,7 +46,7 @@ namespace TreeViewExampleProgrammierenStarten.View
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-
+          this.WindowState =  WindowState.Minimized;
         }
     }
 }

@@ -7,7 +7,7 @@
          xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:viewModel="clr-namespace:TreeViewExampleProgrammierenStarten.ViewModel"
         mc:Ignorable="d"
-        Title="TreeviewExample" Height="450" Width="800"
+        Title="TreeviewExample" Height="800" Width="1800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -179,11 +179,89 @@
                         <Setter Property="IsSelected" 
                                 Value="{Binding IsSelected}"/>
                         
-
                     </Style>
                 </TreeView.ItemContainerStyle>
 
             </TreeView>
+            <DataGrid Grid.Column="1"
+                      Grid.Row="2"
+                      Background="Transparent"
+                      Foreground="White" 
+                      ItemsSource="{Binding FileList}"  
+                      Grid.ColumnSpan="2"
+                      AllowDrop="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"
+                      AutoGenerateColumns="False"
+                      Margin="15,0,15,0" >
+                <DataGrid.Columns>
+                    
+                    <DataGridTemplateColumn Width="280"
+                                Header="Datei">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"
+                               Foreground="White"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn Width="220"
+                                Header="Erstell am:">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CreateTime}"
+                               Foreground="White"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="220"
+                                Header="letzte Änderung">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastModified}"
+                               Foreground="White"
+                               FontSize="18"
+                               VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="120"
+                                Header="Größe">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                    <TextBlock Text="{Binding Length}"
+                                               Foreground="White"
+                                               FontSize="18"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"/>
+                                
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                   
+
+                </DataGrid.Columns>
+
+
+
+
+            </DataGrid>
+        
+            
         </Grid>
     </Border>
 </Window>
